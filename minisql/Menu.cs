@@ -8,10 +8,13 @@ namespace minisql
 {
     public class Menu
     {
-        public static void MainMenu()
+        public static void MainMenu() //this is the main menu of the application, and where 
+            //all the calls will go back to incase the user gives wrong input, i have done it 
+            //this way to avoid bugs with looping and not having the user stuck if they
+            //want to go back after choosing a option in the menu.
         {
             while (true)
-            {
+            {   //list of all the options
                 Console.Clear();
                 Console.WriteLine("1. Show all projects");
                 Console.WriteLine("2. Add time for a project you worked on");
@@ -38,16 +41,16 @@ namespace minisql
                     case "5":
                         Functions.AddProject();
                         break;
-                    case "e":
+                    case "e": //if the user types in e and hits enter the app will close
                         Console.Clear();
                         Console.WriteLine("Closing down...");
                         Environment.Exit(0);
                         break;
-                    default:
+                    default: //if the user types in anything other then the case: options 
+                        //this will run
                         Console.Clear();
                         Console.WriteLine("Invalid choice. Press any key to try again...");
                         Console.ReadLine();
-                        MainMenu();
                         break;
                 }
             }

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace minisql
 {
-    public class ProjectPerson
+    public class ProjectPerson //sets up for a list that can be retrived from a db
     {
-        public int project_id { get; set; }
-        public int person_id { get; set; }
         public int hours_worked { get; set; }
         public string project_name { get; set; }
         public string person_name { get; set; }
