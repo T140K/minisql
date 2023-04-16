@@ -119,6 +119,7 @@ namespace minisql
                 }
 
                 cnn.Execute($"INSERT INTO dwr_project (project_name) VALUES ('{name}');");
+                Console.WriteLine("Added to the database");
             }
         }
     }

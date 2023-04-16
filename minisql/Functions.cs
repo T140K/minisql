@@ -69,12 +69,12 @@ namespace minisql
         }
         public static bool ContainsOnlyLetters(string input)
         {
-            Regex regex = new Regex("^[a-zA-Z]+$");
+            Regex regex = new Regex("^[a-zA-Z ]+$");
             return regex.IsMatch(input);
         }
         public static bool ContainsOnlyLettersAndNumbers(string input)
         {
-            Regex regex = new Regex("^[a-zA-Z0-9]+$");
+            Regex regex = new Regex("^[a-zA-Z0-9 ]+$");
             return regex.IsMatch(input);
         }
         public static void AddProject()
@@ -88,6 +88,8 @@ namespace minisql
                 Console.ReadLine();
                 Menu.MainMenu();
             }
+
+            DbAccess.AddProjectQ(name);
 
             Console.WriteLine($"Success, {name} has now been added to the list, now assign people to it!");
             Console.ReadLine();
