@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VS project\\minisql\\minisql\\minisql.csproj": {}
+    "E:\\VS-Projects\\minisql\\minisql\\minisql.csproj": {}
   },
   "projects": {
-    "C:\\VS project\\minisql\\minisql\\minisql.csproj": {
+    "E:\\VS-Projects\\minisql\\minisql\\minisql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VS project\\minisql\\minisql\\minisql.csproj",
+        "projectUniqueName": "E:\\VS-Projects\\minisql\\minisql\\minisql.csproj",
         "projectName": "minisql",
-        "projectPath": "C:\\VS project\\minisql\\minisql\\minisql.csproj",
-        "packagesPath": "C:\\Users\\Yummi\\.nuget\\packages\\",
-        "outputPath": "C:\\VS project\\minisql\\minisql\\obj\\",
+        "projectPath": "E:\\VS-Projects\\minisql\\minisql\\minisql.csproj",
+        "packagesPath": "C:\\Users\\MF DOOM\\.nuget\\packages\\",
+        "outputPath": "E:\\VS-Projects\\minisql\\minisql\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Yummi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\MF DOOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

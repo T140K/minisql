@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "+4tpi4hOUVk6PBugL1Foanv/ZnnjhIVSmpqrqpTcGbscj8PtKaN9qBlKbdjoejstWw77sA3JyQPa8osPH5tYRw==",
+  "dgSpecHash": "MGT6twShkG7aFMNTbukwxK1pfgJ23AYPhQgZa5C0gursJKLoS9UaT7OnhAZ0CgTZw3efaFerEHGEK2InUTRRsw==",
   "success": true,
-  "projectFilePath": "C:\\VS project\\minisql\\minisql\\minisql.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\VS-Projects\\minisql\\minisql\\minisql.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\npgsql\\7.0.2\\npgsql.7.0.2.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0\\system.configuration.configurationmanager.7.0.0.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0\\system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\system.security.permissions\\7.0.0\\system.security.permissions.7.0.0.nupkg.sha512",
+    "C:\\Users\\MF DOOM\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
