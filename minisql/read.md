@@ -1,11 +1,11 @@
-- Alla namn på filer, variabler, metoder etc ska vara på engelska
+x- Alla namn på filer, variabler, metoder etc ska vara på engelska
 - Det ska gå att skapa personer samt projekt
-- Det ska gå att registrera arbetad tid på ett projekt så att det på något sätt syns i databasen
-- Projektet måste innehålla minst tre olika metoder/funktioner som du skapat själv
-- Projektet måste versionshanteras med Git. Du ska ha sparat löpande till Github under arbetet.
+x- Det ska gå att registrera arbetad tid på ett projekt så att det på något sätt syns i databasen
+x- Projektet måste innehålla minst tre olika metoder/funktioner som du skapat själv
+x- Projektet måste versionshanteras med Git. Du ska ha sparat löpande till Github under arbetet.
 - Det ska finnas en del kommentarer i koden. Dels som förklarar vad varje metod eller del av koden gör (ex. de olika funktionerna i programmet) samt kommentarer för kodrader som inte är helt uppenbara vad de gör eller hur de fungerar.
-- Du ska lägga alla anrop till databasen i en separat klass, som inte innehåller någon meny eller annan logik, se PostgresDataAccess.csLinks to an external site.
-- Du behöver lägga in åtminstone en person och ett projekt i databasen, med din kod eller DBGate
+x- Du ska lägga alla anrop till databasen i en separat klass, som inte innehåller någon meny eller annan logik, se PostgresDataAccess.csLinks to an external site.
+x- Du behöver lägga in åtminstone en person och ett projekt i databasen, med din kod eller DBGate
 - Skapa en databas-dump och döp den till database.sql som ska innehålla strukturen samt exempeldatan du skapat.
-- Ingen insert i programmet får skicka med "id" i SQL, dvs ni får inte inserta med primary key satt, detta ska postgres ta hand om.
-- Användaren får inte mata in ID i någon del av programmet. Däremot val i meny, t.ex 1, 2, 3 är helt OK
+x- Ingen insert i programmet får skicka med "id" i SQL, dvs ni får inte inserta med primary key satt, detta ska postgres ta hand om.
+x- Användaren får inte mata in ID i någon del av programmet. Däremot val i meny, t.ex 1, 2, 3 är helt OK

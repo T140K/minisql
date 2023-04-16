@@ -21,7 +21,7 @@ namespace minisql
         {
             using (IDbConnection cnn = new NpgsqlConnection(LoadConnectionString()))
             {
-                string sql = "SELECT pp.hours_worked, p.project_name, per.name, per.password " +
+                string sql = "SELECT pp.hours_worked, p.project_name, per.name " +
                              "FROM dwr_project_person pp" +
                              " JOIN dwr_project p ON pp.project_id = p.id" +
                              " JOIN dwr_person per ON pp.person_id = per.id" +
@@ -32,8 +32,7 @@ namespace minisql
                 {
                     hours_worked = x.hours_worked,
                     project_name = x.project_name,
-                    person_name = x.name,
-                    password = x.password,
+                    person_name = x.name
 
                 }).ToList();
             }
