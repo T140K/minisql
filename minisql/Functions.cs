@@ -20,7 +20,6 @@ namespace minisql
             }
             Console.ReadLine();
         }
-
         public static void RegisterTime()
         {
             Console.WriteLine("What project would you like to register time on?");
@@ -51,7 +50,6 @@ namespace minisql
             Console.WriteLine($"Added {hours} hours to the project!\n Press any key to continiue...");
             Console.ReadLine();
         }
-
         public static void AddPerson()
         {
             Console.WriteLine("What is the name of the person you want to add?");
@@ -69,11 +67,30 @@ namespace minisql
             Console.WriteLine($"Success, {name} has been added!\n Press any key to return to the main menu...");
             Console.ReadLine();
         }
-
         public static bool ContainsOnlyLetters(string input)
         {
             Regex regex = new Regex("^[a-zA-Z]+$");
             return regex.IsMatch(input);
+        }
+        public static bool ContainsOnlyLettersAndNumbers(string input)
+        {
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
+            return regex.IsMatch(input);
+        }
+        public static void AddProject()
+        {
+            Console.WriteLine("What is the name of the project you want to add?");
+            string name = Console.ReadLine();
+
+            if (!ContainsOnlyLettersAndNumbers(name))
+            {
+                Console.WriteLine("Name can only contain letters and numbers. \nReturning to the main menu...");
+                Console.ReadLine();
+                Menu.MainMenu();
+            }
+
+            Console.WriteLine($"Success, {name} has now been added to the list, now assign people to it!");
+            Console.ReadLine();
         }
     }
 }

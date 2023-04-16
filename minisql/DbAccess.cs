@@ -99,5 +99,27 @@ namespace minisql
                 cnn.Execute($"INSERT INTO dwr_person (name) VALUES ('{name}');");
             }
         }
+        public static void AddProjectQ(string name)
+        {
+            using (IDbConnection cnn = new NpgsqlConnection(LoadConnectionString()))
+            {
+                string sql = $"SELECT COUNT(*) FROM dwr_project WHERE project_name = '{name}'";
+                int count = cnn.QuerySingle<int>(sql);
+                if (count > 0)
+                {
+                    Console.WriteLine("Cannot have duplicate project names!\nPress any key to return to the main menu...");
+                    Console.ReadLine();
+                    Menu.MainMenu();
+                }
+                else if (name == null)
+                {
+                    Console.WriteLine("The name cannot be empty! \n Press any key to return to the main menu...");
+                    Console.ReadLine();
+                    Menu.MainMenu();
+                }
+
+                cnn.Execute($"INSERT INTO dwr_project (project_name) VALUES ('{name}');");
+            }
+        }
     }
 }
