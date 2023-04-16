@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace minisql
@@ -49,6 +50,30 @@ namespace minisql
 
             Console.WriteLine($"Added {hours} hours to the project!\n Press any key to continiue...");
             Console.ReadLine();
+        }
+
+        public static void AddPerson()
+        {
+            Console.WriteLine("What is the name of the person you want to add?");
+            string nameCheck = Console.ReadLine();
+            if (!ContainsOnlyLetters(nameCheck))
+            {
+                Console.WriteLine("Name can only contain letters, returning to the main menu...");
+                Console.ReadLine();
+                Menu.MainMenu();
+            }
+
+            string name = nameCheck;
+
+            DbAccess.AddPersonQ(name);
+            Console.WriteLine($"Success, {name} has been added!\n Press any key to return to the main menu...");
+            Console.ReadLine();
+        }
+
+        public static bool ContainsOnlyLetters(string input)
+        {
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            return regex.IsMatch(input);
         }
     }
 }

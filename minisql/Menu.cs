@@ -14,7 +14,8 @@ namespace minisql
             {
                 Console.Clear();
                 Console.WriteLine("1. Show all projects");
-                Console.WriteLine("2. Register time for a project");
+                Console.WriteLine("2. Add time for a project you worked on");
+                Console.WriteLine("3. Add a person to a project");
                 Console.WriteLine("4. Create person");
                 Console.WriteLine("5. Create a project");
                 Console.WriteLine("e. Exit");
@@ -29,6 +30,12 @@ namespace minisql
                         Functions.RegisterTime();
                         break;
                     case "3":
+
+                        break;
+                    case "4":
+                        Functions.AddPerson();
+                        break;
+                    case "5":
 
                         break;
                     case "e":

@@ -17,6 +17,8 @@ namespace minisql
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
 
+        //-----------------------------------------------------------------------
+
         public static List<ProjectPerson> GetProjectPeople()
         {
             using (IDbConnection cnn = new NpgsqlConnection(LoadConnectionString()))
@@ -73,6 +75,28 @@ namespace minisql
                 }
 
                 cnn.Execute($"UPDATE dwr_project_person SET hours_worked = hours_worked + {hours} WHERE project_id = {projId} AND person_id = {nameId}");
+            }
+        }
+        public static void AddPersonQ(string name)
+        {
+            using (IDbConnection cnn = new NpgsqlConnection(LoadConnectionString()))
+            {
+                string sql = $"SELECT COUNT(*) FROM dwr_person WHERE name = '{name}'";
+                int count = cnn.QuerySingle<int>(sql);
+                if (count > 0)
+                {
+                    Console.WriteLine("Cannot have duplicate names!\n Press any key to return to the main menu...");
+                    Console.ReadLine();
+                    Menu.MainMenu();
+                }
+                else if (name == null)
+                {
+                    Console.WriteLine("The name cannot be empty! \n Press any key to return to the main menu...");
+                    Console.ReadLine();
+                    Menu.MainMenu();
+                }
+
+                cnn.Execute($"INSERT INTO dwr_person (name) VALUES ('{name}');");
             }
         }
     }
