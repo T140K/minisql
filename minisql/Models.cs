@@ -13,5 +13,6 @@ namespace minisql
         public int hours_worked { get; set; }
         public string project_name { get; set; }
         public string person_name { get; set; }
+        public string password { get; set; }
     }
 }

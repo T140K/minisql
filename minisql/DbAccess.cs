@@ -24,7 +24,7 @@ namespace minisql
                 string sql = "SELECT pp.hours_worked, p.project_name, per.name, per.password " +
                              "FROM dwr_project_person pp" +
                              " JOIN dwr_project p ON pp.project_id = p.id" +
-                             " JOIN dwr_person pe ON pp.person_id = pe.id" +
+                             " JOIN dwr_person per ON pp.person_id = per.id" +
                              " ORDER BY p.project_name ASC";
 
                 var output = cnn.Query(sql, new DynamicParameters());
@@ -33,7 +33,7 @@ namespace minisql
                     hours_worked = x.hours_worked,
                     project_name = x.project_name,
                     person_name = x.name,
-                    password = x.password
+                    password = x.password,
 
                 }).ToList();
             }

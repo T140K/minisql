@@ -10,6 +10,7 @@
             {
                 Console.WriteLine($"{p.project_name} - {p.person_name}: {p.hours_worked} hours");
             }
+            Console.ReadLine();
         }
     }
 }
