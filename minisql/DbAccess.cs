@@ -97,6 +97,7 @@ namespace minisql
                 }
 
                 cnn.Execute($"INSERT INTO dwr_person (name) VALUES ('{name}');");
+                Console.WriteLine("Success\n");
             }
         }
         public static void AddProjectQ(string name)
@@ -107,7 +108,7 @@ namespace minisql
                 int count = cnn.QuerySingle<int>(sql);
                 if (count > 0)
                 {
-                    Console.WriteLine("Cannot have duplicate project names!\nPress any key to return to the main menu...");
+                    Console.WriteLine("Project already exists!\nPress any key to return to the main menu...");
                     Console.ReadLine();
                     Menu.MainMenu();
                 }
@@ -119,7 +120,25 @@ namespace minisql
                 }
 
                 cnn.Execute($"INSERT INTO dwr_project (project_name) VALUES ('{name}');");
-                Console.WriteLine("Added to the database");
+                Console.WriteLine("Success\n");
+            }
+        }
+        public static void AssignPP(int name, int proj)
+        {
+            using (IDbConnection cnn = new NpgsqlConnection(LoadConnectionString()))
+            {
+                string sql = $"SELECT COUNT(*) FROM dwr_project_person WHERE project_id = {proj} AND person_id = {name}";
+                int count = cnn.QuerySingle<int>(sql);
+
+                if (count > 0)
+                {
+                    Console.WriteLine("This person is already assigned to this project!\nPress any key to return to the main menu...");
+                    Console.ReadLine();
+                    Menu.MainMenu();
+                }
+
+                cnn.Execute($"INSERT INTO dwr_project_person (project_id, person_id) VALUES ('{proj}', '{name}')");
+                Console.WriteLine("Success\n");
             }
         }
     }

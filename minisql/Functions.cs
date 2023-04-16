@@ -94,5 +94,32 @@ namespace minisql
             Console.WriteLine($"Success, {name} has now been added to the list, now assign people to it!");
             Console.ReadLine();
         }
+
+        public static void AssignPP()
+        {
+            Console.WriteLine("Who would you like to assign to this project?");
+            string nameC = Console.ReadLine();
+            int name = DbAccess.CheckName(nameC);
+            if (name == 0)
+            {
+                Console.WriteLine("Name not found, returning to main menu");
+                Console.ReadLine();
+                Menu.MainMenu();
+            }
+            Console.WriteLine("What projct do you want to assign this person to?");
+            string projC = Console.ReadLine();
+            int proj = DbAccess.CheckProj(projC);
+            if (proj == 0)
+            {
+                Console.WriteLine("Project not found, returning to main menu");
+                Console.ReadLine();
+                Menu.MainMenu();
+            }
+
+            DbAccess.AssignPP(name, proj);
+
+            Console.WriteLine($"Success, {nameC} has been assigen to {projC}!");
+            Console.ReadLine();
+        }
     }
 }

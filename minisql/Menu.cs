@@ -30,7 +30,7 @@ namespace minisql
                         Functions.RegisterTime();
                         break;
                     case "3":
-
+                        Functions.AssignPP();
                         break;
                     case "4":
                         Functions.AddPerson();
