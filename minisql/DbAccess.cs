@@ -38,5 +38,43 @@ namespace minisql
                 }).ToList();
             }
         }
+
+        public static int CheckProj(string proj)
+        {
+            using (IDbConnection cnn = new NpgsqlConnection(LoadConnectionString()))
+            {
+                string sql = ($"SELECT id from dwr_project WHERE project_name = '{proj}'");
+                int id = cnn.QuerySingleOrDefault<int>(sql, new { proj });
+                return id;
+            }
+        }
+
+        public static int CheckName(string name)
+        {
+            using (IDbConnection cnn = new NpgsqlConnection(LoadConnectionString()))
+            {
+                string sql = ($"SELECT id from dwr_person WHERE name = '{name}'");
+                int id = cnn.QuerySingleOrDefault<int>(sql, new { name });
+                return id;
+            }
+        }
+
+        public static void RegisterTimeQ(int hours, int? projId, int? nameId)
+        {
+            using (IDbConnection cnn = new NpgsqlConnection(LoadConnectionString()))
+            {
+                string sql = $"SELECT COUNT(*) FROM dwr_project_person WHERE project_id = {projId} AND person_id = {nameId}";
+                int count = cnn.QuerySingle<int>(sql);
+
+                if (count == 0)
+                {
+                    Console.WriteLine("Wrong project name combination!\n Returning to the main menu");
+                    Console.ReadLine();
+                    Menu.MainMenu();
+                }
+
+                cnn.Execute($"UPDATE dwr_project_person SET hours_worked = hours_worked + {hours} WHERE project_id = {projId} AND person_id = {nameId}");
+            }
+        }
     }
 }
